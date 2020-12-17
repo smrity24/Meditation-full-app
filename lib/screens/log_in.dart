@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meditation_app/screens/sign_up2.dart';
 
 class LogIn extends StatelessWidget {
   @override
@@ -138,12 +139,22 @@ class LogIn extends StatelessWidget {
                             ),
                           );
                         },
-                        child: Text(
-                          ' sign in'.toUpperCase(),
-                          style: TextStyle(
-                            color: Colors.black26,
-                            decoration: TextDecoration.underline,
-                            fontWeight: FontWeight.w600,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SignUp2(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            ' sign up'.toUpperCase(),
+                            style: TextStyle(
+                              color: Colors.black26,
+                              decoration: TextDecoration.underline,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
                         ),
                       )
@@ -173,7 +184,9 @@ class Background extends StatelessWidget {
         alignment: Alignment.center,
         children: [
           Positioned(
-            top: -30,
+            top: -20,
+            left: 0,
+            right: 0,
             child: Image.asset(
               'assets/images/Group 6800.png',
               height: 280,
@@ -187,16 +200,19 @@ class Background extends StatelessWidget {
               height: 40,
               width: 40,
               decoration: BoxDecoration(
+                border: Border.all(color: Colors.black26),
                 borderRadius: BorderRadius.circular(33),
-                border: Border.all(
-                  color: Colors.black26,
-                ),
               ),
               child: InkWell(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: Icon(Icons.arrow_back)),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                borderRadius: BorderRadius.circular(33),
+                child: Icon(
+                  Icons.arrow_back,
+                  color: Colors.black,
+                ),
+              ),
             ),
           ),
           child,
