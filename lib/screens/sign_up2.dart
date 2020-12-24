@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meditation_app/screens/welcome.dart';
 
 class SignUp2 extends StatelessWidget {
   @override
@@ -183,7 +184,10 @@ class _SignUpFormState extends State<SignUpForm> {
                 borderRadius: BorderRadius.circular(23),
               ),
               color: Colors.blueGrey,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Welcome()));
+              },
               child: Text(
                 'GET STARTED',
                 style: TextStyle(color: Colors.white),
